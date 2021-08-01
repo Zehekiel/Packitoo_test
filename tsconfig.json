@@ -22,5 +22,5 @@
   },
   "include": [
     "src"
-  ]
+, "features", "features", "hooks.ts", "reducer/counter"  ]
 }
