@@ -27,7 +27,7 @@ export const productListSlice = createSlice({
       state.value = arrayReduce
     },
     addProduct: (
-      state: { value: Array<any> },
+      state: { value: Array<Product> },
       action: PayloadAction<Product>
     ) => {
       state.value.push(action.payload)

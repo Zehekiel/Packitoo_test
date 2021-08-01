@@ -2,7 +2,7 @@ import { put, call, all, takeLatest } from "redux-saga/effects"
 import { sagaActions } from './sagasActions';
 import { ProductArray } from '../provider/models/product';
 import { getProducts } from '../provider/api/product/getProducts';
-import { emptyProductList, saveProductList } from "../reducer/products.reducer";
+import { emptyProductList, saveProductList } from "../reducer/productList.reducer";
 
 export function* fetchProductsSaga(){
   try{
@@ -17,8 +17,8 @@ export function* fetchProductsSaga(){
   }
 }
 
-function* BriefSaga(){
-  yield all([takeLatest(sagaActions.FETCH_PRODUCTS_SAGA, fetchProductsSaga)])
+function* ProductListSaga(){
+  yield all([takeLatest(sagaActions.FETCH_PRODUCTSLIST_SAGA, fetchProductsSaga)])
 }
 
-export default BriefSaga
+export default ProductListSaga

@@ -5,7 +5,7 @@ export function getProducts (): Promise<ProductArray>{
   .then((response) => response.json())
   .then((apiResponse: ProductArray)=> (apiResponse) )
   .catch((e) => {
-    console.error('error getBriefs', e)
+    console.error('error getProducts', e)
     return []
   })
 }

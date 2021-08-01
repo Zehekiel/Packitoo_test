@@ -1,4 +1,4 @@
-import { BriefArray } from "../models/brief";
+import { BriefArray } from "../../models/brief";
 
 export function getBriefs (): Promise<BriefArray>{
   return fetch('http://localhost:3000/briefs')

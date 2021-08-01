@@ -5,7 +5,7 @@ export function getProductById (id: string): Promise<Product>{
   .then((response) => response.json())
   .then((apiResponse: Product)=> (apiResponse) )
   .catch((e) => {
-    console.error('error getBriefs', e)
+    console.error('error getProductById', e)
     return new Product()
   })
 }

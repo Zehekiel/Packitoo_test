@@ -9,13 +9,13 @@ import './briefForm.css'
 
 function BriefForm() {
   const productList:  ProductArray = useAppSelector((state) => state.productListReducer.value)
-  const productChoosed:  Product = useAppSelector((state) => state.productReducer.value)
+
   const [brief, setBrief] = useState(new Brief())
 
   const dispatch = useAppDispatch()
 
   useEffect(() => {
-    dispatch({ type: sagaActions.FETCH_PRODUCTS_SAGA })
+    dispatch({ type: sagaActions.FETCH_PRODUCTSLIST_SAGA})
   }, [dispatch])
 
   async function onSelectProduct (productId: string){
@@ -25,12 +25,15 @@ function BriefForm() {
   }
 
   async function onChangeInput (value: string, field: 'title' | 'comment' | 'productId'){
-    setBrief(old => ({...old, [field]: value}))
+    if(field === 'productId'){
+      setBrief(old => ({...old, [field]: parseInt(value)}))
+    } else {
+      setBrief(old => ({...old, [field]: value}))
+    }
   }
 
-  async function onSubmit (){
-    console.log('productChoosed', productChoosed)
-    console.log('brief', brief)
+  function onSubmit (){
+    dispatch({ type: sagaActions.FETCH_POSTBRIEF_SAGA, payload: brief })
   }
 
   return (
@@ -52,6 +55,7 @@ function BriefForm() {
         </select>
         <input type="submit" value="Sauvegarder" onClick={()=> onSubmit()}/>
       </form>
+      <button  onClick={()=> onSubmit()} > save</button>
     </article>
   )
 }
