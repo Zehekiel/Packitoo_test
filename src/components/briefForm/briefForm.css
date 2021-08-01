@@ -1,5 +1,9 @@
-.briefSection{
-  border: 1px solid black;
-  text-align:center;
-  margin: 10px
+.briefForm{
+  display: flex;
+  flex-direction: column;
+}
+
+.briefArticle{
+  padding:10px;
+  border: 1px solid black
 }

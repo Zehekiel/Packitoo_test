@@ -1,24 +1,24 @@
-import { Product } from './../provider/models/product';
 import { put, call, all, takeLatest } from "redux-saga/effects"
-import { getBriefs } from "../provider/api/getBrief"
 import { sagaActions } from './sagasActions';
-import { deleteProduct, saveProduct } from '../reducer/product.reducer';
+import { ProductArray } from '../provider/models/product';
+import { getProducts } from '../provider/api/product/getProducts';
+import { emptyProductList, saveProductList } from "../reducer/products.reducer";
 
-export function* fetchProductSaga(){
+export function* fetchProductsSaga(){
   try{
-    const response: Product = yield call(getBriefs) 
+    const response: ProductArray = yield call(getProducts) 
     yield put (
-      saveProduct(response)
+      saveProductList(response)
     )
   } catch (e){
     yield put (
-      deleteProduct()
+      emptyProductList()
     )
   }
 }
 
-function* ProductSaga(){
-  yield all([takeLatest(sagaActions.FETCH_PRODUCT_SAGA, fetchProductSaga)])
+function* BriefSaga(){
+  yield all([takeLatest(sagaActions.FETCH_PRODUCTS_SAGA, fetchProductsSaga)])
 }
 
-export default ProductSaga
+export default BriefSaga

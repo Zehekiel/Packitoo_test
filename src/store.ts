@@ -1,7 +1,8 @@
 import { createStore, applyMiddleware } from 'redux'
 import createSagaMiddleware from 'redux-saga'
 import rootReducer from './reducer/rootreducer'
-import saga from './sagas/brief.saga'
+import briefSaga from './sagas/brief.saga'
+import productsSaga from './sagas/product.saga'
 
 const sagaMiddleware = createSagaMiddleware()
 
@@ -9,7 +10,8 @@ export const store = createStore(
   rootReducer,
   applyMiddleware(sagaMiddleware)
 )
-sagaMiddleware.run(saga)
+sagaMiddleware.run(briefSaga)
+sagaMiddleware.run(productsSaga)
 
 
 // Infer the `RootState` and `AppDispatch` types from the store itself

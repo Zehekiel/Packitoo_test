@@ -4,7 +4,7 @@ import BriefForm from '../components/briefForm/briefForm';
 function App() {
 
   return (
-    <main>
+    <main className='App'>
       <BriefForm/>
     </main>
   );
