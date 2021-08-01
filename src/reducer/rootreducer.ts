@@ -1,10 +1,10 @@
 import { combineReducers } from "redux"
-import productListSlice from '../reducer/product.reducer copy';
+import productSlice from './product.reducer';
 import briefListReducer from '../reducer/brief.reducer';
 
 const rootReducer = combineReducers({
   briefReducer: briefListReducer,
-  productReducer : productListSlice,
+  productReducer : productSlice,
 })
 
 export type RootReducerState = ReturnType<typeof rootReducer>
