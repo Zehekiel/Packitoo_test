@@ -9,7 +9,6 @@ export const briefListSlice = createSlice({
   },
   reducers: {
     saveBriefList: (state, action: PayloadAction<Array<Brief>>) => {
-      console.log('action.payload', action.payload)
       state.value = action.payload
     },
     deleteOneBrief: (state, action: PayloadAction<number>) => {

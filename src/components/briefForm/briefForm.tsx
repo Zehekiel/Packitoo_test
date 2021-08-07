@@ -41,7 +41,6 @@ function BriefForm() {
         <input type='text' placeholder='title'  onChange ={(e)=> onChangeInput(e.target.value, 'title') }/>
         <input type='text' placeholder='comment' onChange={(e)=> onChangeInput(e.target.value, 'comment') }/>
         <SelectProduct OnChange={(e: number)=> onSelectProduct(e)}/>
-
         <input type="submit" value="Sauvegarder" />
       </form>
     </article>
