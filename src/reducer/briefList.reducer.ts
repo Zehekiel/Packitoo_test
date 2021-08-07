@@ -9,10 +9,15 @@ export const briefListSlice = createSlice({
   },
   reducers: {
     saveBriefList: (state, action: PayloadAction<Array<Brief>>) => {
+      console.log('action.payload', action.payload)
       state.value = action.payload
     },
     deleteOneBrief: (state, action: PayloadAction<number>) => {
       const arrayFiltered = state.value.filter((brief: Brief)=> brief.id !== action.payload)
+      state.value = arrayFiltered
+    },
+    filterBriefListByproductId: (state, action: PayloadAction<number>) => {
+      const arrayFiltered = state.value.filter((brief: Brief)=> brief.id === action.payload)
       state.value = arrayFiltered
     },
     setBriefList: (state, action: PayloadAction<Brief>) => {
@@ -39,6 +44,6 @@ export const briefListSlice = createSlice({
 })
 
 // Action creators are generated for each case reducer function
-export const { saveBriefList, addBrief, emptyBriefList, deleteOneBrief, setBriefList } = briefListSlice.actions
+export const { saveBriefList, addBrief, emptyBriefList, deleteOneBrief, filterBriefListByproductId, setBriefList } = briefListSlice.actions
 
 export default briefListSlice.reducer

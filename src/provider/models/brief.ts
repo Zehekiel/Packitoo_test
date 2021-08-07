@@ -3,6 +3,7 @@ export class Brief {
       title: string = ''
       comment: string = ''
       productId: number = 0
+      product?: string
 }
 
 export type BriefArray = Array<Brief>

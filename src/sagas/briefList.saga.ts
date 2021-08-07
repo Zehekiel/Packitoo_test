@@ -18,7 +18,7 @@ export function* fetchBriefsSaga(){
 }
 
 function* BriefListSaga(){
-  yield all([takeLatest(sagaActions.FETCH_BRIEF_SAGA, fetchBriefsSaga)])
+  yield all([takeLatest(sagaActions.FETCH_BRIEFLIST_SAGA, fetchBriefsSaga)])
 }
 
 export default BriefListSaga

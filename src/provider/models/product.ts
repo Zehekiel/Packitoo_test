@@ -1,6 +1,6 @@
 export class Product {
-  id: number = 0
-  name: string = ''
+  id: number = -1
+  name: string = 'Tous les produits'
 }
 
 export type ProductArray = Array<Product>

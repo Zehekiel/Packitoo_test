@@ -1,0 +1,9 @@
+.listBriefArticle{
+  padding:10px;
+}
+
+.briefList{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
