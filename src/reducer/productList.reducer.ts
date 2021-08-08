@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/no-array-constructor */
 import { Product } from '../provider/models/product'
 import { createSlice, PayloadAction } from '@reduxjs/toolkit'
 

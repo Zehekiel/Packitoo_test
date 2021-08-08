@@ -48,7 +48,7 @@ function BriefForm() {
   }
 
   return (
-    <article className='briefArticle' >
+    <article className='briefArticle' data-testid='briefForm'>
       <form className='briefForm'>
         <TextField required defaultValue="Titre" onChange ={(e)=> onChangeInput(e.target.value, 'title') }/>
         <TextField required defaultValue="Commentaire" onChange ={(e)=> onChangeInput(e.target.value, 'comment') }/>

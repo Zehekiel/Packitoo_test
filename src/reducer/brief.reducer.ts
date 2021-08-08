@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/no-array-constructor */
 import { Brief } from '../provider/models/brief'
 import { createSlice, PayloadAction } from '@reduxjs/toolkit'
 

@@ -3,12 +3,12 @@ import { useAppDispatch, useAppSelector } from '../../hooks';
 import { Brief, BriefArray } from '../../provider/models/brief';
 import { sagaActions } from '../../sagas/sagasActions';
 import { createSelector } from 'reselect'
-import './listBrief.css'
+import './briefList.css'
 import SelectProduct from '../ui/selectProduct';
 import BriefCard from '../ui/card/briefCard';
 import { CircularProgress } from '@material-ui/core';
 
-function ListBrief() {
+function BriefList() {
   const briefsList:  BriefArray = useAppSelector((state) => state.briefListReducer.value)
   const [productIdSelected, setProductIdSelected] = useState(-1)
   const [loading, setLoading] = useState(true);
@@ -46,7 +46,7 @@ function ListBrief() {
 
 
   return (
-    <article className='listBriefArticle' >
+    <article className='listBriefArticle' data-testid='briefList'>
       <SelectProduct OnChange={(e: number)=> onSelectProduct(e)}/>
       <ul className='briefList'>
         { 
@@ -62,4 +62,4 @@ function ListBrief() {
   )
 }
 
-export default ListBrief
+export default BriefList

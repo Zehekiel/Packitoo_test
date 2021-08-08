@@ -1,6 +1,6 @@
 import React from 'react';
 import BriefForm from '../components/briefForm/briefForm';
-import ListBrief from '../components/listBrief/listBrief';
+import BriefList from '../components/listBrief/briefList';
 import './app.css'
 
 function App() {
@@ -8,7 +8,7 @@ function App() {
   return (
     <main className='App'>
       <BriefForm/>
-      <ListBrief/>
+      <BriefList/>
     </main>
   );
 }

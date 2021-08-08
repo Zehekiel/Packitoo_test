@@ -9,7 +9,7 @@ In the project directory, you must run:
 ### `yarn server`
 
 Run the server in the development mode.\
-Open [http://localhost:3000/briefs] or [http://localhost:3000/products] to view it in the browser.
+Open [http://localhost:4000/briefs] or [http://localhost:4000/products] to view it in the browser.
 
 ## then:
 
