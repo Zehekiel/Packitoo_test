@@ -1,8 +1,8 @@
-import { put, call, all, takeLatest } from "redux-saga/effects"
-import { sagaActions } from './sagasActions';
-import { ProductArray } from '../provider/models/product';
-import { getProducts } from '../provider/api/product/getProducts';
-import { emptyProductList, saveProductList } from "../reducer/productList.reducer";
+import { put, call, all, takeLatest } from 'redux-saga/effects'
+import { sagaActions } from './sagasActions'
+import { ProductArray } from '../provider/models/product'
+import { getProducts } from '../provider/api/product/getProducts'
+import { saveProductList } from '../reducer/productList.reducer'
 
 export function* fetchProductsSaga(){
   try{
@@ -11,9 +11,7 @@ export function* fetchProductsSaga(){
       saveProductList(response)
     )
   } catch (e){
-    yield put (
-      emptyProductList()
-    )
+    console.error('error fetchProductsSaga', e)
   }
 }
 

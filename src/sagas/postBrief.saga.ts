@@ -1,8 +1,8 @@
-import { put, call, all, takeLatest } from "redux-saga/effects"
-import { sagaActions } from './sagasActions';
-import { Brief } from "../provider/models/brief";
-import { postBrief } from "../provider/api/brief/postBrief";
-import { addBrief } from "../reducer/briefList.reducer";
+import { put, call, all, takeLatest } from 'redux-saga/effects'
+import { sagaActions } from './sagasActions'
+import { Brief } from '../provider/models/brief'
+import { postBrief } from '../provider/api/brief/postBrief'
+import { addBrief } from '../reducer/briefList.reducer'
 
 export function* fetchPostBrief({payload}:any){
   try{

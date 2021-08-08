@@ -1,6 +1,6 @@
-import React from 'react';
-import BriefForm from '../components/briefForm/briefForm';
-import BriefList from '../components/listBrief/briefList';
+import React from 'react'
+import BriefForm from '../components/briefForm/briefForm'
+import BriefList from '../components/listBrief/briefList'
 import './app.css'
 
 function App() {
@@ -10,7 +10,7 @@ function App() {
       <BriefForm/>
       <BriefList/>
     </main>
-  );
+  )
 }
 
-export default App;
+export default App

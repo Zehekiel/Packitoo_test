@@ -13,3 +13,8 @@
   border-radius: 5px;
   min-width: 30%;
 }
+
+.errorText{
+  color: red;
+  text-align: center;
+}

@@ -1,12 +1,12 @@
-import React from 'react';
-import { makeStyles } from '@material-ui/core/styles';
-import Card from '@material-ui/core/Card';
-import CardContent from '@material-ui/core/CardContent';
-import Typography from '@material-ui/core/Typography';
-import { Brief } from '../../../provider/models/brief';
-import { createSelector } from 'reselect';
-import { Product, ProductArray } from '../../../provider/models/product';
-import { useAppSelector } from '../../../hooks';
+import React from 'react'
+import { makeStyles } from '@material-ui/core/styles'
+import Card from '@material-ui/core/Card'
+import CardContent from '@material-ui/core/CardContent'
+import Typography from '@material-ui/core/Typography'
+import { Brief } from '../../provider/models/brief'
+import { createSelector } from 'reselect'
+import { Product, ProductArray } from '../../provider/models/product'
+import { useAppSelector } from '../../hooks'
 
 const useStyles = makeStyles({
   card: {
@@ -19,7 +19,7 @@ const useStyles = makeStyles({
 export default function BriefCard(props: {brief: Brief}) {
   const productList:  ProductArray = useAppSelector((state) => state.productListReducer.value)
   const { brief } = props
-  const styles = useStyles();
+  const styles = useStyles()
 
   const StateProduct = (state: number) => state
   const getProduct = createSelector(
@@ -34,12 +34,12 @@ export default function BriefCard(props: {brief: Brief}) {
   )
 
   return (
-    <Card className={styles.card}>
+    <Card className={styles.card} data-testid='briefCard'>
       <CardContent>
-        <Typography variant="h5" component="h2">
+        <Typography variant="h5" component="h2" data-testid='briefCardTitle'>
           {brief.title}
         </Typography>
-        <Typography  color="textSecondary">
+        <Typography  color="textSecondary" data-testid='briefCardProduct'>
           {getProduct(brief.productId).name}
         </Typography>
         <Typography variant="body2" component="p">
@@ -47,5 +47,5 @@ export default function BriefCard(props: {brief: Brief}) {
         </Typography>
       </CardContent>
     </Card>
-  );
+  )
 }

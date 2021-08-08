@@ -1,4 +1,3 @@
-
 describe('The Home Page', () => {
   it('successfully loads', () => {
     cy.visit('/')
@@ -6,9 +5,6 @@ describe('The Home Page', () => {
 })
 
 describe('App display', () => {
-  it('successfully loads', () => {
-    cy.visit('/')
-  })
 
   it('briefForm', ()=> {
     cy.get('[data-testid=briefForm]').should('exist')
