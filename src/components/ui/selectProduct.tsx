@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import { useAppSelector } from '../hooks';
-import { Product, ProductArray } from '../provider/models/product';
+import { useAppSelector } from '../../hooks';
+import { Product, ProductArray } from '../../provider/models/product';
 import Select from '@material-ui/core/Select';
 import MenuItem from '@material-ui/core/MenuItem';
 

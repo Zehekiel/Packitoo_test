@@ -4,17 +4,22 @@ import { Brief, BriefArray } from '../../provider/models/brief';
 import { sagaActions } from '../../sagas/sagasActions';
 import { createSelector } from 'reselect'
 import './listBrief.css'
-import OneBrief from '../brief/brief';
-import SelectProduct from '../selectProduct';
+import SelectProduct from '../ui/selectProduct';
+import BriefCard from '../ui/card/briefCard';
+import { CircularProgress } from '@material-ui/core';
 
 function ListBrief() {
-  let briefsList:  BriefArray = useAppSelector((state) => state.briefListReducer.value)
+  const briefsList:  BriefArray = useAppSelector((state) => state.briefListReducer.value)
   const [productIdSelected, setProductIdSelected] = useState(-1)
-  const dispatch = useAppDispatch()
+  const [loading, setLoading] = useState(true);
 
+  const dispatch = useAppDispatch()
 
   useEffect(() => {
     dispatch({ type: sagaActions.FETCH_BRIEFLIST_SAGA})
+    window.setTimeout(() => {
+      setLoading(false)
+    }, 2000);
   }, [dispatch])
 
   const getStateId = (state :number) => state
@@ -31,15 +36,26 @@ function ListBrief() {
     }
   )
 
+  function onSelectProduct (id: number){
+    setProductIdSelected(id)
+    setLoading(true)
+    window.setTimeout(() => {
+      setLoading(false)
+    }, 1500);
+  }
+
 
   return (
     <article className='listBriefArticle' >
-      <SelectProduct OnChange={(e: number)=> setProductIdSelected(e)}/>
+      <SelectProduct OnChange={(e: number)=> onSelectProduct(e)}/>
       <ul className='briefList'>
-        {
-          getFilteredBriefList(productIdSelected).map((brief: Brief, index: number)=> (
-            <OneBrief brief= {brief} key={brief.title + index} />
-          ))
+        { 
+          loading ? 
+            <CircularProgress size={80} /> 
+          : 
+            getFilteredBriefList(productIdSelected).map((brief: Brief, index: number)=> (
+              <BriefCard brief= {brief} key={brief.title + index} />
+            ))
         }
       </ul>
     </article>

@@ -1,9 +1,11 @@
 .listBriefArticle{
   padding:10px;
+  width: 90vw
 }
 
 .briefList{
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
+  justify-content: space-around;
 }

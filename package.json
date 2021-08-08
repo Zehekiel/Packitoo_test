@@ -29,7 +29,8 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "server": "json-server db.json"
+    "server": "json-server db.json",
+    "cypress": "./node_modules/.bin/cypress open"
   },
   "eslintConfig": {
     "extends": [
@@ -48,5 +49,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "cypress": "^8.2.0"
   }
 }
